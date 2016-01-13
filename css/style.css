@@ -1,0 +1,128 @@
+@font-face {
+    font-family: 'digital';
+    src:    url('../fonts/DS-DIGI.woff2') format('woff2'),
+            url('../fonts/DS-DIGI.TTF')  format('truetype');
+}
+
+body {
+    background-color: #25587f;
+    padding-top: 80px;
+    font-family: "digital", "orbitron", sans-serif;
+    color: lightskyblue;
+
+}
+
+#clock {
+    background-color: #5e5e5e;
+    width: 800px;
+    height: 400px;
+    padding: 50px 0;
+    margin: 0 auto;
+}
+
+#display {
+    position: relative;
+    background-color: #0f0f0f;
+    width: 600px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+#top-row {
+    position: relative;
+    width: 400px;
+
+}
+
+#weather-icon {
+    position: absolute;
+    font-size: 80px;
+    top: -5px;
+    left: 145px;
+    padding: 0;
+
+}
+
+#location {
+    position: absolute;
+    font-size: 40px;
+    margin-left: 242px;
+
+}
+
+#info-container {
+    position: absolute;
+    left: 245px;
+}
+
+#current-temp {
+    position: absolute;
+    font-size: 50px;
+    top: 35px;
+}
+
+#min-max {
+    position: absolute;
+    width: 80px;
+    left: 90px;
+    top: 50px;
+}
+
+.min-max-boxes {
+    position: relative;
+    font-size: 12px;
+}
+
+#weather-text {
+    position: absolute;
+    top: 67px;
+    left: 90px;
+}
+
+#time-display-row {
+    position: relative;
+}
+
+#time-display {
+    position: absolute;
+    width: 300px;
+    top: 100px;
+    left: 160px;
+    text-align: center;
+}
+
+.two-digit-block {
+
+    font-size: 100px;
+    width: 100px;
+}
+
+#hours {
+
+}
+
+#separator {
+    font-size: 80px;
+    line-height: 140px;
+    margin: 0 15px;
+}
+
+#minutes {
+
+}
+
+#seconds {
+    font-size: 40px;
+    line-height: 110px;
+    left: 10px;
+}
+
+#date-row {
+    width: 400px;
+    margin: 0 auto;
+    font-size: 25px;
+    padding-top: 255px;
+
+
+}
+
