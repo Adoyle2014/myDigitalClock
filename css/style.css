@@ -9,7 +9,7 @@ body {
     padding-top: 80px;
     font-family: "digital", "orbitron", sans-serif;
     color: lightskyblue;
-
+    width: 100%;
 }
 
 #clock {
@@ -31,7 +31,6 @@ body {
 #top-row {
     position: relative;
     width: 400px;
-
 }
 
 #weather-icon {
@@ -40,14 +39,12 @@ body {
     top: -5px;
     left: 145px;
     padding: 0;
-
 }
 
 #location {
     position: absolute;
     font-size: 40px;
     margin-left: 242px;
-
 }
 
 #info-container {
@@ -93,7 +90,6 @@ body {
 }
 
 .two-digit-block {
-
     font-size: 100px;
     width: 100px;
 }
@@ -102,10 +98,6 @@ body {
     font-size: 80px;
     line-height: 140px;
     margin: 0 15px;
-}
-
-#minutes {
-
 }
 
 #small-digit-block {
@@ -117,21 +109,6 @@ body {
     width: 35px;
     line-height: 30px;
     margin-top: 20px;
-
-
-
-
-}
-
-#seconds {
-
-
-
-}
-
-#ampm {
-
-
 }
 
 #date-row {
@@ -139,7 +116,9 @@ body {
     margin: 0 auto;
     font-size: 25px;
     padding-top: 255px;
+}
 
-
+sup {
+    font-size: 14px;
 }
 
