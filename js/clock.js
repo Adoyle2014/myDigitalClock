@@ -125,29 +125,6 @@ $('document').ready(function() {
 
     };
 
-
-    var weatherIcon = {
-        icon01d: "mif-sun",
-        icon01n: "mif-moon",
-        icon02d: "mif-cloudy",
-        icon02n: "mif-cloud2",
-        icon03d: "mif-cloudy2",
-        icon03n: "mif-cloudy2",
-        icon04d: "mif-weather3",
-        icon04n: "mif-weather3",
-        icon09d: "mif-weather4",
-        icon09n: "mif-weather4",
-        icon10d: "mif-rainy",
-        icon10n: "mif-rainy",
-        icon11d: "mif-lightning3",
-        icon11n: "mif-lightning3",
-        icon13d: "mif-snowy3",
-        icon13n: "mif-snowy3",
-        icon50d: "mif-weather",
-        icon50n: "mif-weather2"
-    };
-
-
     function getUserLocation() {
         $.get("http://ipinfo.io", function(response) {
             createLocationString(response.city);
@@ -159,9 +136,7 @@ $('document').ready(function() {
             getWeatherOnLoad(lon, lat, units);
 
         }, "jsonp");
-
     }
-
 
     function getWeatherOnLoad(lon, lat, units) {
 
@@ -183,12 +158,32 @@ $('document').ready(function() {
     }
 
     function createWeatherDataStrings(data) {
+        var weatherIcon = {
+            icon01d: "mif-sun",
+            icon01n: "mif-moon",
+            icon02d: "mif-cloudy",
+            icon02n: "mif-cloud2",
+            icon03d: "mif-cloudy2",
+            icon03n: "mif-cloudy2",
+            icon04d: "mif-weather3",
+            icon04n: "mif-weather3",
+            icon09d: "mif-weather4",
+            icon09n: "mif-weather4",
+            icon10d: "mif-rainy",
+            icon10n: "mif-rainy",
+            icon11d: "mif-lightning3",
+            icon11n: "mif-lightning3",
+            icon13d: "mif-snowy3",
+            icon13n: "mif-snowy3",
+            icon50d: "mif-weather",
+            icon50n: "mif-weather2"
+        };
+
         $("#current-temp").html(Math.round(data.main.temp) + "&deg;f");
         $("#min-temp").html("MIN " + (Math.round(data.main.temp_min)) + "&deg;f");
         $("#max-temp").html("MAX " + (Math.round(data.main.temp_max)) + "&deg;f");
         $("#weather-text").html(data.weather[0].description);
         var weatherDataIcon = "icon" + data.weather[0].icon;
-        console.log(weatherDataIcon);
         $("#weather-icon").addClass(weatherIcon[weatherDataIcon]);
     }
 
@@ -196,11 +191,11 @@ $('document').ready(function() {
         $("#location").html(city);
     }
 
-
     getUserLocation();
     clock();
     setInterval(clock, 1000);
     setCurrentDate();
+
 });
 
 

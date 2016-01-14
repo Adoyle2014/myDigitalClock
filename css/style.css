@@ -36,7 +36,7 @@ body {
 
 #weather-icon {
     position: absolute;
-    font-size: 80px;
+    font-size: 100px;
     top: -5px;
     left: 145px;
     padding: 0;
