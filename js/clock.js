@@ -74,12 +74,35 @@ $('document').ready(function() {
     var clock = function() {
 
         Date.prototype.time = function() {
+
+            var addZero = function(input) {
+                if (input < 10) {
+                    return ("0" + input);
+                } else {
+                    return input;
+                }
+            };
+
+            var H = this.getHours();
+
             return {
-                hours : this.getHours(),
-                minutes : this.getMinutes(),
-                seconds : this.getSeconds(),
-                ampm : function(hours) {
-                    if(hours > 12) {
+                hours : function() {
+
+                    if (H > 12 && H < 22) {
+                        return (addZero((H - 12)))
+                    } else if (H > 22 && H > 12) {
+                        return (H - 12)
+                    } else {
+                        return addZero(H);
+                    }
+                },
+
+                minutes : addZero(this.getMinutes()),
+                seconds : addZero(this.getSeconds()),
+                ampmHours : this.getHours(),
+                ampm : function() {
+                    var H = this.ampmHours;
+                    if(H > 12) {
                         return "pm";
                     } else {
                         return "am"
@@ -95,15 +118,17 @@ $('document').ready(function() {
         var seconds = newTime.time().seconds;
         var am_pm = newTime.time().ampm();
 
-        console.log(hours + " : " + minutes + " : " + seconds + " " + am_pm);
+        $("#hours").html(hours);
+        $("#minutes").html(minutes);
+        $("#seconds").html(seconds);
+        $("#ampm").html(am_pm);
 
     };
 
 
-    setInterval(clock(), 1000);
+
     clock();
-
-
+    setInterval(clock, 1000);
     setCurrentDate();
 });
 

@@ -97,10 +97,6 @@ body {
     width: 100px;
 }
 
-#hours {
-
-}
-
 #separator {
     font-size: 80px;
     line-height: 140px;
@@ -111,10 +107,30 @@ body {
 
 }
 
+#small-digit-block {
+    position: absolute;
+    top: 15px;
+    left: 250px;
+    display: inline;
+    font-size: 35px;
+    width: 35px;
+    line-height: 30px;
+    margin-top: 20px;
+
+
+
+
+}
+
 #seconds {
-    font-size: 40px;
-    line-height: 110px;
-    left: 10px;
+
+
+
+}
+
+#ampm {
+
+
 }
 
 #date-row {
