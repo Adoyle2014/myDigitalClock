@@ -64,10 +64,10 @@ $('document').ready(function() {
         var year = newDate.today().year;
 
 
-        $("#day").html(day + ", ");
-        $("#month").html(month + " ");
-        $("#date").html(date + "<sup>" + sup + "</sup>, ");
-        $("#year").html(year);
+        $(".day").html(day + ", ");
+        $(".month").html(month + " ");
+        $(".date").html(date + "<sup>" + sup + "</sup>, ");
+        $(".year").html(year);
 
     };
 
@@ -118,10 +118,10 @@ $('document').ready(function() {
         var seconds = newTime.time().seconds;
         var am_pm = newTime.time().ampm();
 
-        $("#hours").html(hours);
-        $("#minutes").html(minutes);
-        $("#seconds").html(seconds);
-        $("#ampm").html(am_pm);
+        $(".hours").html(hours);
+        $(".minutes").html(minutes);
+        $(".seconds").html(seconds);
+        $(".ampm").html(am_pm);
 
     };
 
@@ -179,18 +179,72 @@ $('document').ready(function() {
             icon50n: "mif-weather2"
         };
 
-        $("#current-temp").html(Math.round(data.main.temp) + "&deg;f");
-        $("#min-temp").html("MIN " + (Math.round(data.main.temp_min)) + "&deg;f");
-        $("#max-temp").html("MAX " + (Math.round(data.main.temp_max)) + "&deg;f");
-        $("#weather-text").html(data.weather[0].description);
+        $(".current-temp").html(Math.round(data.main.temp) + "&deg;f");
+        $(".min-temp").html("MIN " + (Math.round(data.main.temp_min)) + "&deg;f");
+        $(".max-temp").html("MAX " + (Math.round(data.main.temp_max)) + "&deg;f");
+        $(".weather-text").html(data.weather[0].description);
         var weatherDataIcon = "icon" + data.weather[0].icon;
-        $("#weather-icon").addClass(weatherIcon[weatherDataIcon]);
+        $(".weather-icon").addClass(weatherIcon[weatherDataIcon]);
     }
 
     function createLocationString(city) {
-        $("#location").html(city);
+        $(".location").html(city);
     }
 
+
+    function Timer(start, stop) {
+        this.start = start;
+        this.stop = stop;
+    }
+
+    Timer.prototype.down = function(elementId) {
+        if(this.start > this.stop) {
+            var start = this.start;
+            var stop = this.stop + 1;
+            elementId = '#' + elementId;
+            $(elementId).html(start);
+            var count = function () {
+                if(start >= stop) {
+                    start = start - 1;
+                    $(elementId).html(start);
+                } else {
+                    clearInterval(count);
+                }
+            };
+            setInterval(count, 1000)
+        } else {
+            alert("Your start time must be greater than your stop time.");
+        }
+    };
+
+    Timer.prototype.up = function(elementId) {
+        if(this.start < this.stop) {
+            var start = this.start;
+            var stop = this.stop - 1;
+            elementId = '#' + elementId;
+            $(elementId).html(start);
+            var count = function () {
+                if(start <= stop) {
+                    start = start + 1;
+                    $(elementId).html(start);
+                } else {
+                    clearInterval(count);
+                }
+            };
+            setInterval(count, 1000)
+        } else {
+            alert("Your start time must be less than your stop time.");
+        }
+
+    };
+
+
+
+
+    var countdown = new Timer(15, 0);
+    countdown.down("countdown");
+    var countup = new Timer(0, 15);
+    countup.up("countup");
     getUserLocation();
     clock();
     setInterval(clock, 1000);

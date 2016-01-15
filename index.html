@@ -25,58 +25,106 @@
 <body>
 <div class="container">
     <div class="row">
-        <div id="clock">
-
-            <div id="display">
-                <div id="top-row">
-                    <div id="weather-icon">
-                        <span></span>
-                    </div>
-                    <div class="text-center" id="location">
+        <div class="clock">
+            <div class="display">
+                <div class="top-row">
+                    <span class="weather-icon"></span>
+                    <div class="location">
                         <p></p>
                     </div>
-                </div><!-- /#top-row --->
-                    <div id="info-container">
-                        <div id="current-temp">
+                    <div class="info-container">
+                        <div class="current-temp">
                             <p></p>
                         </div>
-                        <div id="min-max">
-                            <div class="min-max-boxes pull-left" id="min-temp">
+                        <div class="min-max">
+                            <div class="min-max-boxes pull-left min-temp">
                                 <p></p>
                             </div>
-                            <div class="min-max-boxes pull-right" id="max-temp">
+                            <div class="min-max-boxes pull-right max-temp">
                                 <p></p>
                             </div>
                         </div>
-                        <div id="weather-text">
+                        <div class="weather-text">
                             <p></p>
                         </div>
-                    </div><!-- /#info-container --->
-                    <div id="time-display-row">
-                        <div id="time-display">
-                            <div class="two-digit-block pull-left">
-                                <p id="hours"></p>
-                            </div>
-                            <div class="pull-left" id="separator">
-                                <p>:</p>
-                            </div>
-                            <div class="two-digit-block pull-left">
-                                <p id="minutes"></p>
-                            </div>
-                            <div id="small-digit-block">
-                                <p id="seconds"></p>
-                                <p id="ampm"></p>
-                            </div>
-                        </div><!-- /#time-display --->
-                    </div><!-- /#time-display-row --->
-                    <div id="date-row" class="text-center">
-                        <p><span id="day"></span><span id="month"></span><span id="date"></span><span id="year"></span></p>
+                    </div><!-- /.info-container --->
+                </div><!-- /.top-row --->
+                <div class="time-display-row">
+                    <div class="time-display">
+                        <div class="two-digit-block pull-left">
+                            <p class="hours"></p>
+                        </div>
+                        <div class="pull-left separator">
+                            <p>:</p>
+                        </div>
+                        <div class="two-digit-block pull-left">
+                            <p class="minutes"></p>
+                        </div>
+                        <div class="small-digit-block">
+                            <p class="seconds"></p>
+                            <p class="ampm"></p>
+                        </div>
+                    </div><!-- /.time-display --->
+
+                </div><!-- /.time-display-row --->
+                <div class="date-row text-center">
+                    <p><span class="day"></span><span class="month"></span><span class="date"></span><span class="year"></span></p>
+                </div><!-- /.date-row --->
+            </div><!-- /.display --->
+
+
+            <div class="display hidden">
+                <div class="top-row">
+                    <span class="weather-icon"></span>
+                    <div class="location">
+                        <p></p>
                     </div>
-                </div><!-- /#date-row --->
-            </div><!-- /#display --->
-        </div><!-- /#clock --->
+                    <div class="info-container">
+                        <div class="current-temp">
+                            <p></p>
+                        </div>
+                        <div class="min-max">
+                            <div class="min-max-boxes pull-left min-temp">
+                                <p></p>
+                            </div>
+                            <div class="min-max-boxes pull-right max-temp">
+                                <p></p>
+                            </div>
+                        </div>
+                        <div class="weather-text">
+                            <p></p>
+                        </div>
+                    </div><!-- /.info-container --->
+                </div><!-- /.top-row --->
+                <div class="time-display-row">
+                    <div class="time-display">
+                        <div class="two-digit-block pull-left">
+                            <p class="hours"></p>
+                        </div>
+                        <div class="pull-left separator">
+                            <p>:</p>
+                        </div>
+                        <div class="two-digit-block pull-left">
+                            <p class="minutes"></p>
+                        </div>
+                        <div class="small-digit-block">
+                            <p class="seconds"></p>
+                            <p class="ampm"></p>
+                        </div>
+                    </div><!-- /.time-display --->
+
+                </div><!-- /.time-display-row --->
+                <div class="date-row text-center">
+                    <p><span class="day"></span><span class="month"></span><span class="date"></span><span class="year"></span></p>
+                </div><!-- /.date-row --->
+            </div><!-- /.display --->
+
+
+        </div><!-- /.clock --->
     </div><!-- /.row -->
 </div><!-- /.container -->
+
+
 
 
 <!-- Bootstrap core JavaScript
