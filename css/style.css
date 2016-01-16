@@ -5,16 +5,27 @@
 }
 
 body {
-    background-color: #25587f;
+    background-color: #132a3d;
     padding-top: 80px;
     font-family: "digital", "orbitron", sans-serif;
     color: lightskyblue;
     width: 100%;
 }
 
+.container {
+    width: 600px;
+    margin: 0 auto;
+}
+
+#mode-selection {
+    font-size: 20px;
+}
+
+
+
 .clock {
-    background-color: #5e5e5e;
-    width: 800px;
+    background-color: #132a3d;
+    width: 600px;
     height: 400px;
     padding: 50px 0;
     margin: 0 auto;
@@ -121,5 +132,35 @@ body {
 
 sup {
     font-size: 14px;
+}
+
+
+.time-selection {
+    left: -40px;
+    font-size: 30px;
+
+
+}
+
+.time-selector {
+    cursor: pointer;
+    padding-top: 3px;
+}
+
+#break-selection {
+    left: 290px;
+    font-size: 14px;
+
+}
+
+#start {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+
+.popover {
+    background-color: #0f0f0f;
+    color: lightskyblue;
 }
 

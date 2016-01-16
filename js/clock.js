@@ -1,5 +1,20 @@
 $('document').ready(function() {
 
+    /*---------- Bootstrap tooltip activation ------------*/
+    $(".tooltips").popover({
+        animation: true,
+        placement: 'top',
+        trigger: 'hover'
+    });
+
+    /*---------- Click handlers ------------*/
+    /* Mode buttons */
+    $(".mode-options").on('click', function() {
+        var mode = $(this).attr('id');
+        displayChange(mode);
+    });
+
+
     var setCurrentDate = function() {
 
         var weekday = new Array(7);
@@ -191,7 +206,6 @@ $('document').ready(function() {
         $(".location").html(city);
     }
 
-
     function Timer(start, stop) {
         this.start = start;
         this.stop = stop;
@@ -237,6 +251,16 @@ $('document').ready(function() {
         }
 
     };
+
+    function displayChange(mode) {
+        $(".mode-options").removeClass("active");
+        $('#' +  mode).addClass("active").blur();
+        $(".display").addClass("hidden");
+        $('#' + mode + '-display').removeClass('hidden')
+
+    }
+
+
 
 
 

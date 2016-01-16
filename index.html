@@ -25,8 +25,29 @@
 <body>
 <div class="container">
     <div class="row">
+        <div class="col-md-12">
+            <div class="row text-center" id="mode-selection">
+                Mode Selection:
+            </div>
+            <div class="row text-center">
+                <div class="btn-group btn-group-lg" data-toggle="buttons">
+                    <button type="button" id="clock-mode" class="mode-options btn btn-primary active" data-toggle="button" aria-pressed="false" autocomplete="off">
+                        Clock
+                    </button>
+                    <button type="button" id="pomodoro-mode" class="mode-options btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
+                        Pomodoro
+                    </button>
+                    <button type="button" id="timer-mode" class="mode-options btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
+                        Timer
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
         <div class="clock">
-            <div class="display">
+            <div class="display" id="clock-mode-display">
                 <div class="top-row">
                     <span class="weather-icon"></span>
                     <div class="location">
@@ -73,7 +94,7 @@
             </div><!-- /.display --->
 
 
-            <div class="display hidden">
+            <div class="display hidden" id="pomodoro-mode-display">
                 <div class="top-row">
                     <span class="weather-icon"></span>
                     <div class="location">
@@ -98,6 +119,63 @@
                 </div><!-- /.top-row --->
                 <div class="time-display-row">
                     <div class="time-display">
+                        <div class="small-digit-block time-selection" id="pomodoro-time-selection">
+                            <i id="pomodoro-time-increase" class="tooltips time-selector glyphicon glyphicon-chevron-up" data-toggle="popover" data-placement="top" data-content="Increase the work portion of the timer by one minute."></i>
+                            <i id="pomodoro-time-decrease" class="tooltips time-selector glyphicon glyphicon-chevron-down" data-toggle="popover" data-placement="top" data-content="Decrease the work portion of the timer by one minute."></i>
+                        </div>
+                        <div class="two-digit-block pull-left">
+                            <p class="minutes work"></p>
+                        </div>
+                        <div class="pull-left separator">
+                            <p>:</p>
+                        </div>
+                        <div class="two-digit-block pull-left">
+                            <p class="seconds work"></p>
+                        </div>
+                        <div class="small-digit-block">
+                            <p id="break">05</p>
+                            <p id="start"><i class="glyphicon glyphicon-off tooltips"  data-toggle="popover" data-placement="top" data-content="Starts and stops the pomodoro timer."></i></p>
+                        </div>
+                        <div class="small-digit-block" id="break-selection">
+                            <i id="break-increase" class="tooltips time-selector glyphicon glyphicon-chevron-up" data-toggle="popover" data-placement="top" data-content="Increase the break portion of the timer by one minute."></i>
+                            <i id="break-decrease" class="tooltips time-selector glyphicon glyphicon-chevron-down"  data-toggle="popover" data-placement="top" data-content="Increase the break portion of the timer by one minute."></i>
+                        </div>
+                    </div><!-- /.time-display --->
+                </div><!-- /.time-display-row --->
+                <div class="date-row text-center">
+                    <p><span class="day"></span><span class="month"></span><span class="date"></span><span class="year"></span></p>
+                </div><!-- /.date-row --->
+            </div><!-- /.display --->
+
+            <div class="display hidden" id="timer-mode-display">
+                <div class="top-row">
+                    <span class="weather-icon"></span>
+                    <div class="location">
+                        <p></p>
+                    </div>
+                    <div class="info-container">
+                        <div class="current-temp">
+                            <p></p>
+                        </div>
+                        <div class="min-max">
+                            <div class="min-max-boxes pull-left min-temp">
+                                <p></p>
+                            </div>
+                            <div class="min-max-boxes pull-right max-temp">
+                                <p></p>
+                            </div>
+                        </div>
+                        <div class="weather-text">
+                            <p></p>
+                        </div>
+                    </div><!-- /.info-container --->
+                </div><!-- /.top-row --->
+                <div class="time-display-row">
+                    <div class="time-display">
+                        <div class="small-digit-block time-selection" id="timer-time-selection">
+                            <i id="timer-time-increase" class="tooltips time-selector glyphicon glyphicon-chevron-up" data-toggle="popover" data-placement="top" data-content="Increase the timer by one hour."></i>
+                            <i id="timer-time-decrease" class="tooltips time-selector glyphicon glyphicon-chevron-down" data-toggle="popover" data-placement="top" data-content="Decrease the timer by one hour."></i>
+                        </div>
                         <div class="two-digit-block pull-left">
                             <p class="hours"></p>
                         </div>
@@ -109,10 +187,13 @@
                         </div>
                         <div class="small-digit-block">
                             <p class="seconds"></p>
-                            <p class="ampm"></p>
+                            <p id="start"><i class="glyphicon glyphicon-off tooltips"  data-toggle="popover" data-placement="top" data-content="Starts and stops the timer."></i></p>
+                        </div>
+                        <div class="small-digit-block" id="break-selection">
+                            <i id="break-increase" class="tooltips time-selector glyphicon glyphicon-chevron-up" data-toggle="popover" data-placement="top" data-content="Increase the timer by one minute."></i>
+                            <i id="break-decrease" class="tooltips time-selector glyphicon glyphicon-chevron-down" data-toggle="popover" data-placement="top" data-content="Decrease the timer by one minute."></i>
                         </div>
                     </div><!-- /.time-display --->
-
                 </div><!-- /.time-display-row --->
                 <div class="date-row text-center">
                     <p><span class="day"></span><span class="month"></span><span class="date"></span><span class="year"></span></p>
